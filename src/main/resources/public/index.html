@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Pacman</title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/view.js"></script>
+</head>
+<style>
+    .item1 {
+        grid-area: lives;
+    }
+    .item2 {
+        grid-area: score;
+    }
+    .item3 {
+        grid-area: canvas;
+        /*overflow: scroll;*/
+        /*height:auto*/
+    }
+    .item4 {
+        grid-area: buttons;
+    }
+    .item5 {
+        grid-area: ghost;
+    }
+    .item6 {
+        grid-area: fruit;
+    }
+    .container {
+        display: grid;
+        grid-template-areas:
+                'lives . score'
+                'ghost fruit buttons'
+                'canvas canvas canvas';
+        grid-gap: 10px;
+        /*background-color: lightskyblue;*/
+        padding: 10px;
+        width: 960px;
+        margin:auto;
+    }
+    div {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        /*background-color: white;
+        text-align: center;
+        padding: 0px;*/
+    }
+    button {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+    }
+</style>
+<body>
+<div style="position:center; top:3em; left:0em;">
+    <div class="container">
+        <div class="item1" id="life_text">
+            Life:
+            <img src="heart.png" id="life_1" alt="1st heart" width="30px" height="30px">
+            <img src="heart.png" id="life_2" alt="2nd heart" width="30px" height="30px">
+            <img src="heart.png" id="life_3" alt="3rd heart" width="30px" height="30px">
+        </div>
+        <div class="item2" id="score_text">
+            Score: 0
+        </div>
+        <div class="item5">
+            <label for="ghost">ghostNum</label><select id="ghost" style="height: 30px">
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+            </select>
+        </div>
+        <div class="item6">
+            <label for="fruit">fruitType</label><select id="fruit" style="height: 30px">
+            <option value="strawberry">strawberry</option>
+            <option value="apple">apple</option>
+        </select>
+        </div>
+        <div class="item4">
+            Level:
+            <button id="easy">
+                Easy
+            </button>
+            <button id="hard">
+                Hard
+            </button>
+        </div>
+        <div class="item3"> <!--style="position:center; top:3em; left:0em;"-->
+                <canvas id="map-canvas" width="840" height="900" style = "background-color: black; z-index: 0; position: absolute;"></canvas>
+                <canvas id="dynamic-canvas" width="840" height="900" style="z-index: 1; position: absolute;"></canvas><br/>
+                <!--            <canvas width="900" height="900" style="border: 1px solid #000000"></canvas>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
