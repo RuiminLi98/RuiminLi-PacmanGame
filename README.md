@@ -2,7 +2,7 @@
 
 https://pacmangame-ruiminli.herokuapp.com/
 
-Please use W, A, S, D or Arrow keys to move the pacman.
+Please use Arrow keys to move the pacman.
 
 Ghosts will use some behavior to move toward/away from Pac-Man. They won't all use the same behavior
 
